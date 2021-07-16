@@ -1,0 +1,5 @@
+// InstaMojo TEST Details
+// define("API_KEY","test_6b3f5eb8a573c9d39d80cb3459a");
+// define("AUTH_TOKEN","test_c4724d8e3b1ff370ab8653515f1");
+// define("END_POINT",'https://test.instamojo.com/api/1.1/');
+// define("RETURN_URL","$serverPath/actions/payment/after_payment.php");
