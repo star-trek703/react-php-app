@@ -1,20 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import Category from './Category'
 
 const Products = ({ API_URL }) => {
     const [categories, setCategories] = useState(null)
     
-    const getCategories = async () => {
-        const res = await fetch(API_URL +'get_categories.php')
-        const data = await res.json()
-        
-        return data
-    }
+    useEffect(() => {
+        fetch(API_URL +'get_categories.php')
+            .then(res => res.json())
+            .then(data => setCategories(data.categories))
+    }, [])
     
-    getCategories().then(data => setCategories(data.categories))
+    // const getCategories = async () => {
+    //     const res = await fetch(API_URL +'get_categories.php')
+    //     const data = await res.json()
+        
+    //     return data
+    // }
+    
+    // getCategories().then(data => setCategories(data.categories))
     
     return (
         <div className='container'>
+            <Helmet>
+                <title>Products</title>
+            </Helmet>
+            
             <main className='main'>
                 <h1>Products</h1>
                 <div className='hr'></div>
