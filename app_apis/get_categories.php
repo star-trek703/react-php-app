@@ -13,7 +13,7 @@ if(is_array($categories))
     foreach ($categories as $c_key => $category)
     {
         array_push($category_array, array(
-            'ID' => $category[0],
+            'id' => $category[0],
             'name' => $category[1]
         ));
     }
