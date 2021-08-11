@@ -7,6 +7,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Products from './components/Products';
+import SingleCategory from './components/SingleCategory';
 
 function App() {
   const API_URL = 'http://localhost/react-php-app/app_apis/'
@@ -38,6 +39,9 @@ function App() {
       ) } />
       <Route path='/products' render={ () => (
         <Products categories={ categories } />
+      ) } />
+      <Route path='/category/:category' render={ ({match}) => (
+        <SingleCategory category={ categories.find(category => category.name === match.params.category) } />
       ) } />
       <Route path='/services' component={ Services } />
       <Route path='/contact' component={ Contact } />
