@@ -1,16 +1,25 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Products from './components/Products';
+<<<<<<< HEAD
 import SingleCategory from './components/SingleCategory';
+import PageNotFound from './components/errors/PageNotFound';
+=======
+>>>>>>> parent of 0f37a84 (Tried adding dynamic route)
 
 function App() {
-  const API_URL = 'http://localhost/react-php-app/app_apis/'
+  const APP_URL = '' // development
+  // const APP_URL = 'https://studyleagueit.com/react-php-app' // production
+
+  // const API_URL = 'http://localhost/react-php-app/app_apis/' // development
+  const API_URL = 'https://studyleagueit.com/react-php-app/app_apis/' // production
+  
 
   const [categories, setCategories] = useState(null)
   
@@ -32,20 +41,37 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header APP_URL={ APP_URL } />
 
+<<<<<<< HEAD
+      <Switch>
+        <Route path='/' exact render={ (props) => (
+          <Home />
+        ) } />
+        <Route path='/products' render={ () => (
+          <Products categories={ categories } />
+        ) } />
+        <Route path='category/:category' render={ ({match}) => (
+          <SingleCategory category={ categories.find(category => category.name === match.params.category) } />
+        ) } />
+        <Route path='/services' component={ Services } />
+        <Route path='/contact' component={ Contact } />
+        <Route path='/about' component={ About } />
+        <Route>
+          <PageNotFound />
+        </Route>
+      </Switch>
+=======
       <Route path='/' exact render={ (props) => (
         <Home />
       ) } />
       <Route path='/products' render={ () => (
         <Products categories={ categories } />
       ) } />
-      <Route path='/category/:category' render={ ({match}) => (
-        <SingleCategory category={ categories.find(category => category.name === match.params.category) } />
-      ) } />
       <Route path='/services' component={ Services } />
       <Route path='/contact' component={ Contact } />
       <Route path='/about' component={ About } />
+>>>>>>> parent of 0f37a84 (Tried adding dynamic route)
     </Router>
   );
 }

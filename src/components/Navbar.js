@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import { FaShoppingCart } from "react-icons/fa"
 
 const Navbar = () => {
     return (
@@ -19,7 +20,14 @@ const Navbar = () => {
                 <li>
                     <NavLink to='/about' activeClassName='active'>About</NavLink>
                 </li>
+                
+                <ul>
+                    <li>
+                        <FaShoppingCart />
+                    </li>
+                </ul>
             </ul>
+
         </nav>
     )
 }
