@@ -7,11 +7,8 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Products from './components/Products';
-<<<<<<< HEAD
 import SingleCategory from './components/SingleCategory';
 import PageNotFound from './components/errors/PageNotFound';
-=======
->>>>>>> parent of 0f37a84 (Tried adding dynamic route)
 
 function App() {
   const APP_URL = '' // development
@@ -43,7 +40,6 @@ function App() {
     <Router>
       <Header APP_URL={ APP_URL } />
 
-<<<<<<< HEAD
       <Switch>
         <Route path='/' exact render={ (props) => (
           <Home />
@@ -61,17 +57,6 @@ function App() {
           <PageNotFound />
         </Route>
       </Switch>
-=======
-      <Route path='/' exact render={ (props) => (
-        <Home />
-      ) } />
-      <Route path='/products' render={ () => (
-        <Products categories={ categories } />
-      ) } />
-      <Route path='/services' component={ Services } />
-      <Route path='/contact' component={ Contact } />
-      <Route path='/about' component={ About } />
->>>>>>> parent of 0f37a84 (Tried adding dynamic route)
     </Router>
   );
 }
